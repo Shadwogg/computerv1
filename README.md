@@ -1,5 +1,5 @@
 # computerv1
-A little polynomial solver
+A little polynomial solver done in c++.
 
 
 
@@ -24,5 +24,3 @@ Output : <string>
 
 
 ## Execution
-
-Done in cpp
