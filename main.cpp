@@ -6,48 +6,40 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:02:21 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/25 18:09:07 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/26 17:45:20 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "tests.hpp"
 #include <string>
-#include <>
+#include "tests.hpp"
+#include "Resolver.hpp"
+#include "Expression.hpp"
 
-bool	tests(std::string inp){
-	return (!contains_multiple_letters(inp) && !is_egal_valid(inp) && all_valid_character(inp));
+bool	is_valid(std::string inp){
+	return (!contains_multiple_letters(inp) && is_egal_valid(inp) && all_valid_character(inp));
 }
 
-char	*trim_spaces(std::string s){
-	int		i = 0, ct = 0;
-	
-	while (s[i]){
-		if (isspace(s[i]))
-			ct++;
+std::string	ft_clean_input(std::string inp){
+	std::string	res;
+	int	i = 0;
+
+	while (inp[i]){
+		if (!isspace(inp[i]))
+			res.append(1, inp[i]);
 		i++;
 	}
-	res = malloc((i - ct + 1) * sizeof (char));
-	res[i - ct] = 0;
-	i = 0;
-	ct = 0;
-	while (s[i] && res[i]){
-		if (isspace(s[i]))
-			ct++;
-		else
-			res[i] = s[i - ct];
-		i++;
-	}
+	std::cout << "CLEANed " << res << std::endl;
 	return (res);
 }
 
-void	parse(std::string inp){
-	if (inp == 0 || *inp == 0)
-		return ;
+void	parse(std::string inp, Expression **left, Expression **right){
 	std::cout << "input is :" << inp << std::endl;
-	trim_spaces(inp);
-	if (tests(inp))
+	inp = ft_clean_input(inp);
+	if (!is_valid(inp))
 		return ;
+	*left = new Expression(inp.substr(0, inp.find('=')));
+	*right = new Expression(inp.substr(inp.find('=') + 1));
 }
 
 int	main(int argc, char **argv){
@@ -56,7 +48,15 @@ int	main(int argc, char **argv){
 		return 0;
 	}
 	if (argc == 1) {
-		std::cout << std::endl;
+		std::cout << "Not enough arguments" << std::endl;
+		return (0);
 	}
-	parse(argv[1]);
+	
+	Expression *left = NULL;
+	Expression *right = NULL;
+	
+	parse(argv[1], &left, &right);
+	if (left == NULL || right == NULL)
+		return (0);
+	Resolver::resolve(left, right);
 }

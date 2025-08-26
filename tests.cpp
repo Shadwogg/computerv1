@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:41:06 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/25 18:06:38 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/26 17:44:57 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ bool    all_valid_character(std::string inp){
     unsigned int    i = 0;
     while (inp[i]){
         if (!(isalnum(inp[i]) || inp[i] == '=' || inp[i] == '.' || inp[i] == '+' || inp[i] == '-' || inp[i] == '*' || inp[i] == '/' || inp[i] == '^' )){
-            std::cout << "Invalid char detected :" << inp[i] << std::endl;
+            std::cout << "Invalid char detected :" << inp[i] << "|"<< std::endl;
             return (false);
         }
         i++;

@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Expression.hpp                                     :+:      :+:    :+:   */
+/*   Resolver.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 16:53:41 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/26 17:30:38 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/08/26 16:51:26 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/08/26 17:29:27 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXPRESSION_HPP
-# define EXPRESSION_HPP
+#include "Resolver.hpp"
 
-# include <string>
-# include <iostream>
 
-class Expression{
-    public :
-        Expression(std::string);
-        ~Expression();
-    
-};
-#endif
+void    Resolver::resolve(Expression *left, Expression *right){
+    (void) left;
+    (void) right;
+}
