@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Expression.cpp                                     :+:      :+:    :+:   */
+/*   Operand.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 17:00:32 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/26 17:49:53 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/08/26 17:56:52 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/08/26 17:57:17 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Expression.hpp"
+#ifndef OPERAND_HPP
+# define OPERAND_HPP
 
-Expression::Expression(std::string inp){
-    std::cout << "Working with " << inp << std::endl;
-    
-}
-
-Expression::~Expression(){}
+#endif

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Expression.cpp                                     :+:      :+:    :+:   */
+/*   Symbol.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 17:00:32 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/26 17:49:53 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/08/26 17:52:54 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/08/26 17:55:44 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Expression.hpp"
+#ifndef SYMBOL_HPP
+# define SYMBOL_HPP
 
-Expression::Expression(std::string inp){
-    std::cout << "Working with " << inp << std::endl;
+
+class   Symbol {
+    protected :
+        Symbol();
+        
+    private :
     
-}
+    public :
+        ~Symbol();
 
-Expression::~Expression(){}
+};
+#endif
