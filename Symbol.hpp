@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:52:54 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/29 12:50:24 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/29 14:39:58 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 
 class   Symbol {
     protected :
-        Symbol(char);
+        Symbol();
         
     private :
-        char    c;
     
     public :
         ~Symbol();

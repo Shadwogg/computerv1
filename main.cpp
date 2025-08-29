@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:02:21 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/26 17:45:20 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/29 15:17:18 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include "Expression.hpp"
 
 bool	is_valid(std::string inp){
-	return (!contains_multiple_letters(inp) && is_egal_valid(inp) && all_valid_character(inp));
+	return (!contains_multiple_letters(inp) && is_egal_valid(inp)
+		&& all_valid_character(inp) && all_numbers_are_valid(inp));
 }
 
 std::string	ft_clean_input(std::string inp){

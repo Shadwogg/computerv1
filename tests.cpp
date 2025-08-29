@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:41:06 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/26 17:44:57 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/29 15:16:53 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ bool    all_valid_character(std::string inp){
             std::cout << "Invalid char detected :" << inp[i] << "|"<< std::endl;
             return (false);
         }
+        i++;
+    }
+    return (true);
+}
+
+bool    all_numbers_are_valid(std::string inp){
+    unsigned int    i=0;
+    while (inp[i]){
+        if (inp[i])
         i++;
     }
     return (true);

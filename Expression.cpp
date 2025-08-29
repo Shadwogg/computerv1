@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:00:32 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/29 13:15:22 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/29 15:07:21 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,15 @@ Expression::Expression(std::string inp){
         if (isOperator(*it)){
             this->symbols.push_back(Operator(*it));
             it++;
+        } else if (isalpha(*it)) {
+            this->symbols.push_back(Operand(*it));
         } else {
             std::string number;
             while (it != ite && isOperand(*it)){
                 number.push_back(*it);
                 it++;
             }
+            this->symbols.push_back(Operand(number));
         }
     }
 }

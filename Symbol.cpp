@@ -6,16 +6,14 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:54:57 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/29 12:53:16 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/29 14:54:56 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Symbol.hpp"
 
 
-Symbol::Symbol(char c){
-    this->c = c;
-}
+Symbol::Symbol(){}
 
 Symbol::~Symbol()
 {}
