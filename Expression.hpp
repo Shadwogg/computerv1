@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 16:53:41 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/29 12:51:09 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/08/29 13:12:08 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <list>
 
 # include "Symbol.hpp"
+# include "Operator.hpp"
 
 class Expression {
     private :
