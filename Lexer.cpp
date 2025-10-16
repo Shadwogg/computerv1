@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.cpp                                          :+:      :+:    :+:   */
+/*   Lexer.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/24 16:41:06 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/11 16:48:10 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/10/11 16:50:07 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/10/11 16:50:57 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.hpp"
+# include "Lexer.hpp"
+
+
+/**
+    
+
+*/
+/*
 #include <cctype>
 #include <iostream>
 
@@ -66,4 +73,4 @@ bool    all_numbers_are_valid(std::string inp){
         i++;
     }
     return (true);
-}
+}*/

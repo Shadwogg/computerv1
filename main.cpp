@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:02:21 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/29 15:17:18 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/11 16:43:56 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 bool	is_valid(std::string inp){
 	return (!contains_multiple_letters(inp) && is_egal_valid(inp)
-		&& all_valid_character(inp) && all_numbers_are_valid(inp));
+		&& all_valid_character(inp) /*&& all_numbers_are_valid(inp)*/);
 }
 
 std::string	ft_clean_input(std::string inp){
@@ -48,8 +48,10 @@ int	main(int argc, char **argv){
 		std::cout << "Too many args." << std::endl;
 		return 0;
 	}
+
 	if (argc == 1) {
 		std::cout << "Not enough arguments" << std::endl;
+		std::cout << "Todo : Read on stdin" << std::endl;
 		return (0);
 	}
 	
@@ -57,7 +59,7 @@ int	main(int argc, char **argv){
 	Expression *right = NULL;
 	
 	parse(argv[1], &left, &right);
-	if (left == NULL || right == NULL)
-		return (0);
-	Resolver::resolve(left, right);
+	// if (left == NULL || right == NULL)
+	// 	return (0);
+	// Resolver::resolve(left, right);
 }
