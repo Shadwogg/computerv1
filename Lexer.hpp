@@ -6,15 +6,14 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 16:51:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/11 16:56:13 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/17 10:39:04 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 /**
-    Alphabet : [a-Z], [0-9], '=', '.'
-    
-     tr
+    Alphabet : [a-Z], [0-9], '=', '.', [+-/*]
+
 */
 #ifndef LEXER_HPP
 # define LEXER_HPP
