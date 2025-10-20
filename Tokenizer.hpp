@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Symbol.cpp                                         :+:      :+:    :+:   */
+/*   Tokenizer.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 17:54:57 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/29 14:54:56 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/10/20 23:55:02 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/10/20 23:59:32 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Symbol.hpp"
+#ifndef TOKENIZER_HPP
+# define TOKENIZER_HPP
 
+# include <iostream>
+# include <cstdlib>
 
-Symbol::Symbol(){}
+# include "Lexer.hpp"
+# include "Expression.hpp"
 
-Symbol::~Symbol()
-{}
+Expression	*tokenify(std::string);
+
+#endif

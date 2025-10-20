@@ -6,15 +6,26 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:56:30 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/08/29 14:40:18 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/20 23:53:15 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Operator.hpp"
 
 
-Operator::Operator(char c) : c(c){
+Operator::Operator(char c) : op(c){
     std::cout << "Operator :" << c << std::endl;
+    if ( (c != '+') && (c != '-') && (c != '*') && (c != '/') )
+        throw (new std::exception());
+}
+
+Operator::Operator(Operator const &op){
+    this->op = op.op;
 }
 
 Operator::~Operator(){}
+
+// bool    Operator::is_sum(void){
+//     return (this->op == '+' || this->op == '-');
+    
+// }
