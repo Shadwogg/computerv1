@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:04 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/21 00:00:05 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/25 15:16:21 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ std::string	ft_clean_input(std::string inp){
 	return (res);
 }
 
-Expression	*tokenify(std::string inp){
+std::list<Term> tokenify(std::string inp){
 	size_t i = 0;
 	inp = ft_clean_input(inp);
+	std::list<Term> tokens;
 	std::cout << inp << std::endl;
     
     Operator    *op;
 
 	while (inp[i]){
+		//case Number
 		if (isalnum(inp[i])){
 			std::cout << "We are number one" << std::endl;
 			i++;
@@ -42,8 +44,8 @@ Expression	*tokenify(std::string inp){
 			i++;
 		} else {
 			std::cout << "Error, unrecognized token" << std::endl;
-			return (NULL);
+			throw (std::exception());
 		}
 	}
-	return (NULL);
+	return (tokens);
 }
