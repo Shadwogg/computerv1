@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:24:47 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 14:56:39 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:58:13 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define LACKING_CHAR 2
 # define NOT_AN_OPERATOR 3
 # define NO_LITTERAL 4
+# define MULTIPLE_LITTERAL 5
 
 
 class ParsingError

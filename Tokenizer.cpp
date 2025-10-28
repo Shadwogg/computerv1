@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:04 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 14:57:29 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:49:17 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,11 @@ void	verify_uniq_litt(std::string inp){
 		throw (ParsingError(NO_LITTERAL));
 	}
 	
-	// while (inp[i]){ TO DO
-	// 	// std::cout << "Verif :" << pos << inp[i] << std::endl;
-	// 	if (isalpha(inp[i]) && inp[pos] != inp[i])
-	// 		throw(ParsingError(0));
-	// 	i++;
-	// }
+	while (inp[i]){
+		if (isalpha(inp[i]) && inp[pos] != inp[i])
+			throw(ParsingError(MULTIPLE_LITTERAL));
+		i++;
+	}
 }
 
 Operand	*extract_number(std::string const &inp, size_t start){
