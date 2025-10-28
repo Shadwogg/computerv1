@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:02:21 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/25 15:12:11 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:25:06 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "Tokenizer.hpp"
 #include "Resolver.hpp"
 #include "Expression.hpp"
+#include "ParsingError.hpp"
 
 // bool	is_valid(std::string inp){
 // 	return (!contains_multiple_letters(inp) && is_egal_valid(inp)
@@ -24,35 +25,43 @@
 // }
 
 int	main(int argc, char **argv){
+	
 	if (argc > 2){
 		std::cout << "Too many args." << std::endl;
 		return 0;
 	}
-
-	if (argc == 1) {
-		std::cout << "Todo : Read on stdin" << std::endl;
-		return (0);
-	}	
 	
-	if (!lexe_is_valid(argv[1])){
-		std::cout << "Invalid character" << std::endl;
-		return (0);
+	std::string inp;
+	if (argc == 1) {
+		std::cout << "Enter your equation :" << std::endl;
+		std::getline(std::cin, inp);
+	} else {
+		inp = argv[1];
 	}
-	std::string inp = argv[1];
+	
+	try {
+		lexe_is_valid(inp);
+		
+		if (inp.find('=') == inp.npos){
+			throw (ParsingError(LACKING_CHAR, '='));
+		}
+		
+		size_t	separator = inp.find('=');
+	
+		std::list<Term> left;
+		std::list<Term> right;
+
+		left = tokenify(inp.substr(0, separator));
+		right = tokenify(inp.substr(separator + 1));
+		
+	} catch (ParsingError &e){
+		std::cout << "Error message : " << e.what() <<std::endl;
+	}
+	
 	
 	// Expression *left = NULL;
 	// Expression *right = NULL;
-	size_t	separator = inp.find('=');
 	
-	std::list<Term> left;
-	std::list<Term> right;
-	try {
-		left = tokenify(inp.substr(0, separator));
-		right = tokenify(inp.substr(separator + 1));
-
-	} catch (std::exception){
-		std::cout << "Err" << std::endl;
-	}
 	// left = tokenify(inp.substr(0, separator));
 	// if (left == NULL)
 	// 	return (0);

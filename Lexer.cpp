@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 16:50:07 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/25 14:53:07 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 10:31:42 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool    lexe_is_valid(std::string inp){
         c = inp[i];
         if (!(isalnum(c) || c == '=' || c == '.' || is_operator(c) || is_exponent(c) || is_space(c))){
             std::cout << c << std::endl;
-            return (false);
+            throw (ParsingError(INVALID_CHAR));
         }
         i++;
     }

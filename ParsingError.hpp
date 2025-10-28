@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Lexer.hpp                                          :+:      :+:    :+:   */
+/*   ParsingError.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 16:51:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 10:34:11 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/10/28 10:24:47 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/10/28 11:28:38 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
-    Take care of the vocabulary part 1
-    Alphabet : [a-Z], [0-9], '=', '.', [+*-/]
-
-*/
-#ifndef LEXER_HPP
-# define LEXER_HPP
+#ifndef PARSINGERROR_HPP
+# define PARSINGERROR_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include <string>
 
-# include "ParsingError.hpp"
+# define INVALID_CHAR 1
+# define LACKING_CHAR 2
 
 
-// bool    contains_multiple_letters(std::string inp);
-// bool    is_egal_valid(std::string inp);
-// bool    all_valid_character(std::string inp);
+class ParsingError
+{
+    private:
+        std::string msg;
 
-bool    is_operator(char);
-bool    is_exponent(char);
-bool    lexe_is_valid(std::string inp);
+    public :
+        ParsingError(int);
+        ParsingError(int, char);
+        ~ParsingError();
+        const char  *what(void) const throw();
+};
 
 #endif
