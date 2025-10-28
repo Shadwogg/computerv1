@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:02:21 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 11:25:06 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:37:43 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,35 +42,21 @@ int	main(int argc, char **argv){
 	try {
 		lexe_is_valid(inp);
 		
-		if (inp.find('=') == inp.npos){
+		size_t	separator = inp.find('=');
+		if (separator == inp.npos){
 			throw (ParsingError(LACKING_CHAR, '='));
 		}
 		
-		size_t	separator = inp.find('=');
-	
 		std::list<Term> left;
 		std::list<Term> right;
 
 		left = tokenify(inp.substr(0, separator));
 		right = tokenify(inp.substr(separator + 1));
 		
+		// Resolver::resolve(left, right);
 	} catch (ParsingError &e){
-		std::cout << "Error message : " << e.what() <<std::endl;
+		std::cout << "Error occured : " << std::endl << e.what() <<std::endl;
 	}
 	
 	
-	// Expression *left = NULL;
-	// Expression *right = NULL;
-	
-	// left = tokenify(inp.substr(0, separator));
-	// if (left == NULL)
-	// 	return (0);
-	// right = tokenify(inp.substr(separator + 1));
-	// if (right == NULL)
-	// 	return (0);
-	
-	// is_syntax_valid(left);
-	// is_syntax_valid(right);
-	
-	// Resolver::resolve(left, right);
 }

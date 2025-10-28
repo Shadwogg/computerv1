@@ -6,12 +6,19 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:04 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/25 17:16:30 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 14:57:29 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Tokenizer.hpp"
 
+
+/**
+ * @brief Returns a copy of the input without spaces.
+ * 
+ * @param inp
+ * @return std::string 
+ */
 std::string	ft_clean_input(std::string inp){
 	std::string	res;
 	int	i = 0;
@@ -29,19 +36,18 @@ void	verify_uniq_litt(std::string inp){
 	size_t i = 0;
 	
 	size_t pos = inp.find_first_of("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
-	std::cout << (pos == std::string::npos);
+	// std::cout << (pos == std::string::npos);
 	
 	if (pos == std::string::npos){
-		std::cout << "No litteral found (where is the x ?)";
-		throw (std::exception());
+		throw (ParsingError(NO_LITTERAL));
 	}
 	
-	while (inp[i]){
-		// std::cout << "Verif :" << pos << inp[i] << std::endl;
-		if (isalpha(inp[i]) && inp[pos] != inp[i])
-			throw(std::exception());
-		i++;
-	}
+	// while (inp[i]){ TO DO
+	// 	// std::cout << "Verif :" << pos << inp[i] << std::endl;
+	// 	if (isalpha(inp[i]) && inp[pos] != inp[i])
+	// 		throw(ParsingError(0));
+	// 	i++;
+	// }
 }
 
 Operand	*extract_number(std::string const &inp, size_t start){
@@ -52,6 +58,12 @@ Operand	*extract_number(std::string const &inp, size_t start){
 	return (NULL);
 }
 
+/**
+ * @brief create a list of Term by analysing the input
+ * 
+ * @param inp 
+ * @return std::list<Term> 
+ */
 std::list<Term> tokenify(std::string inp){
 	size_t i = 0;
 	inp = ft_clean_input(inp);
@@ -78,7 +90,7 @@ std::list<Term> tokenify(std::string inp){
 			i++;
 		} else {
 			std::cout << "Error, unrecognized token" << std::endl;
-			throw (std::exception());
+			throw (ParsingError(UNEXPECTED_ERROR));
 		}
 	}
 	return (tokens);

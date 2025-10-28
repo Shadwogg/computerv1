@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:56:30 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/20 23:53:15 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:35:39 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Operator::Operator(char c) : op(c){
     std::cout << "Operator :" << c << std::endl;
     if ( (c != '+') && (c != '-') && (c != '*') && (c != '/') )
-        throw (new std::exception());
+        throw (ParsingError(NOT_AN_OPERATOR));
 }
 
 Operator::Operator(Operator const &op){

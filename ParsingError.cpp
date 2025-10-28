@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:24:51 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 11:30:24 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:35:59 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ ParsingError::~ParsingError(){
 }
 
 const char  *ParsingError::what(void) const throw(){
-    std::cout << this->msg.c_str() << std::endl;
+    // std::cout << this->msg.c_str() << std::endl;
     return (msg.c_str());
 }

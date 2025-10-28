@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:17:49 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/20 23:53:19 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:34:59 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define OPERATOR_HPP
 
 # include <iostream>
-
+# include "ParsingError.hpp"
 class Operator{
     private :
         char    op;

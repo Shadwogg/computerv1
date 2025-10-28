@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:02 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/25 15:10:09 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:40:06 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include "Lexer.hpp"
 # include "Term.hpp"
 # include "Expression.hpp"
+
+// Error handling
+# include "ParsingError.hpp"
 
 std::list<Term>	tokenify(std::string);
 
