@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:04 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 16:49:17 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/29 19:13:22 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,13 @@ std::string	ft_clean_input(std::string inp){
 	return (res);
 }
 
-void	verify_uniq_litt(std::string inp){
-	size_t i = 0;
-	
-	size_t pos = inp.find_first_of("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
-	// std::cout << (pos == std::string::npos);
-	
-	if (pos == std::string::npos){
-		throw (ParsingError(NO_LITTERAL));
-	}
-	
-	while (inp[i]){
-		if (isalpha(inp[i]) && inp[pos] != inp[i])
-			throw(ParsingError(MULTIPLE_LITTERAL));
-		i++;
-	}
-}
-
+/**
+ * @brief Return the next number in the string
+ * 
+ * @param inp The string 
+ * @param start Position at which we start
+ * @return Operand* ; A Number, or a Litteral
+ */
 Operand	*extract_number(std::string const &inp, size_t start){
 	// Int
 	(void) inp;
@@ -66,25 +56,25 @@ Operand	*extract_number(std::string const &inp, size_t start){
 std::list<Term> tokenify(std::string inp){
 	size_t i = 0;
 	inp = ft_clean_input(inp);
-	
-	verify_uniq_litt(inp); // Verify that we have at least 1 Unknown
+	if (inp[0] == 0)
+		throw (ParsingError(EMPTY_SPACE));
 	std::list<Term> tokens;
 	std::cout << inp << std::endl;
     
-    Operator    *op;
+	std::list<Symbol *> symbols;
 
+	Operator    *op;
+	Operand		*opd;
+	
 	while (inp[i]){
 		//case Number
 		if (isalnum(inp[i])){
-			std::cout << "We one" << std::endl;
-			Operand	*opd = extract_number(inp, i);
-			(void) opd;
+			std::cout << "	We got a number" << std::endl;
+			opd = extract_number(inp, i);
 			i++;
-			while (isalpha(inp[i]))
-				i++;
-			// Case operator
+		// Case operator
 		} else if (is_operator(inp[i])){
-			std::cout << "Operatordation" << std::endl;
+			std::cout << "	Operatordation" << std::endl;
             op = new Operator(inp[i]);
 			i++;
 		} else {

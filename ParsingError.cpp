@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:24:51 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 16:55:58 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:34:37 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@ ParsingError::ParsingError(int err){
         case INVALID_CHAR:
             msg = "Invalid Char detected";
         break;
-
+        case  NO_LITTERAL:
+            msg = "Missing litteral.";
+        break;
+        case MULTIPLE_LITTERAL:
+            msg = "This program doesn't handle multiple unknown";
+        break;
+        case EMPTY_SPACE:
+            msg = "No equation found.";
+        break;
     }
 }
 

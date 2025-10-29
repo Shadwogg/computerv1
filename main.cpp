@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:02:21 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 13:37:43 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:26:41 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,22 @@
 #include "Expression.hpp"
 #include "ParsingError.hpp"
 
-// bool	is_valid(std::string inp){
-// 	return (!contains_multiple_letters(inp) && is_egal_valid(inp)
-// 		&& all_valid_character(inp) /*&& all_numbers_are_valid(inp)*/);
-// }
+void	verify_uniq_litt(std::string inp){
+	size_t i = 0;
+	
+	size_t pos = inp.find_first_of("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+	// std::cout << (pos == std::string::npos);
+	
+	if (pos == std::string::npos){
+		throw (ParsingError(NO_LITTERAL));
+	}
+	
+	while (inp[i]){
+		if (isalpha(inp[i]) && inp[pos] != inp[i])
+			throw(ParsingError(MULTIPLE_LITTERAL));
+		i++;
+	}
+}
 
 int	main(int argc, char **argv){
 	
@@ -46,6 +58,8 @@ int	main(int argc, char **argv){
 		if (separator == inp.npos){
 			throw (ParsingError(LACKING_CHAR, '='));
 		}
+		
+		verify_uniq_litt(inp); // Verify that we have at least 1 Unknown
 		
 		std::list<Term> left;
 		std::list<Term> right;

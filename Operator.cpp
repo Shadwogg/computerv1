@@ -6,17 +6,18 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:56:30 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/28 16:54:07 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/29 19:17:18 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Operator.hpp"
 
 
-Operator::Operator(char c) : op(c){
+Operator::Operator(char c){
     std::cout << "Operator :" << c << std::endl;
-    if ( (c != '+') && (c != '-') && (c != '*') && (c != '/') )
+    if (!is_operator(c))
         throw (ParsingError(NOT_AN_OPERATOR, c));
+    this->op = c;
 }
 
 Operator::Operator(Operator const &op){
@@ -29,3 +30,6 @@ Operator::~Operator(){}
 //     return (this->op == '+' || this->op == '-');
     
 // }
+bool    Operator::isOperand() const{
+    return (false);
+}   

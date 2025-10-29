@@ -6,13 +6,13 @@
 #    By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/24 16:32:09 by ggiboury          #+#    #+#              #
-#    Updated: 2025/10/28 10:42:51 by ggiboury         ###   ########.fr        #
+#    Updated: 2025/10/29 18:42:07 by ggiboury         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			::= computerv1
 SOURCES_PATH 	::= ./
-SOURCES_UTIL	::= tests Resolver Expression Term Operator Operand Lexer Tokenizer ParsingError
+SOURCES_UTIL	::= tests Resolver Expression Term Symbol Operator Operand Lexer Tokenizer ParsingError
 SOURCES_MAIN	::= main $(SOURCES_UTIL)
 SOURCES			::= $(foreach buffer, $(SOURCES_MAIN), $(SOURCES_PATH)$(buffer).cpp)
 OBJS			::= $(SOURCES:.cpp=.o)

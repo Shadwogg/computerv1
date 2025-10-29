@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:56:52 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/20 22:43:58 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:53:29 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include <iostream>
 # include <cstdlib>
 
-class Operand{
-    // private :
-    //     int     integer;
-    //     double  reel;
-    //     char    c;
+# include <Symbol.hpp>
+
+class Operand : public Symbol{
 
     public :
         Operand();
@@ -29,6 +27,8 @@ class Operand{
         ~Operand();
 
         Operand    operator=(Operand const &);
+        
+        bool    isOperand() const;   
 };
 
 #endif

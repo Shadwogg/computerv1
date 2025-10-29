@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Tokenizer.hpp                                      :+:      :+:    :+:   */
+/*   Symbol.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 23:55:02 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/29 19:00:27 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/10/29 18:39:55 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/10/29 18:57:06 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOKENIZER_HPP
-# define TOKENIZER_HPP
+#ifndef SYMBOL_HPP
+# define SYMBOL_HPP
 
-# include <iostream>
-# include <cstdlib>
+class Symbol{
 
-# include "Lexer.hpp"
-# include "Term.hpp"
-# include "Expression.hpp"
-# include "Symbol.hpp"
-
-// Error handling
-# include "ParsingError.hpp"
-
-std::list<Term>	tokenify(std::string);
+    public :
+        Symbol();
+        virtual ~Symbol();
+        
+        virtual bool    isOperand() const = 0;
+};
 
 #endif
