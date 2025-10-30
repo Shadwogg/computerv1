@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:04 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 10:26:24 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:17:14 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,29 @@ std::string	ft_clean_input(std::string inp){
  * 
  * @param inp The string 
  * @param start Position at which we start
- * @return Operand* ; A Number 
+ * @return Operand* ; A Number 00121...001 | 1.02 | 
  */
 Operand	*extract_number(std::string const &inp, size_t start){
-	// Int
-	(void) inp;
-	(void) start;
-	//Real
-	return (NULL);
+	size_t i = start;
+	Operand	*opd = NULL;
+	bool	is_float = false;
+
+	//Checking if its an int or a float
+	while (inp[i]){
+		if (inp[i] == '.'){
+			is_float = true;
+			break ;
+		}
+		i++;
+	}
+
+	if (is_float){
+		opd = new Number((double) 0);
+	}else {
+		opd = new Number((unsigned int)0);
+	}
+	
+	return (opd);
 }
 
 
@@ -82,9 +97,7 @@ std::list<Term> tokenify(std::string inp){
 	Operand		*opd;
 	
 	while (inp[i]){
-		//case Number
 		if (isalpha(inp[i])){
-			// std::cout << "	We got a litteral" << std::endl;
 			opd = new Variable(inp[i]);
 			symbols.push_back(opd);
 			i++;
@@ -92,9 +105,8 @@ std::list<Term> tokenify(std::string inp){
 			std::cout << "Houston, wevgot a number" << std::endl;
 			opd = extract_number(inp, i);
 			symbols.push_back(opd);
-			i++; // HERE
+			i+= 1; // todo
 		} else if (is_operator(inp[i])){
-			// std::cout << "	Reconnaisance d'operateur" << std::endl;
             op = new Operator(inp[i]);
 			symbols.push_back(op);
 			i++;

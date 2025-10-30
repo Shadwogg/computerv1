@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 10:26:37 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 12:03:19 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:32:58 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 # define NUMBER_HPP
 
 # include "Operand.hpp"
+// #include <sstream>
+#include <string>
+
 
 class Number : public Operand{
     private :
         unsigned int    _integer;
         double          _real;
+        bool            _is_real;
 
     public :
         Number(unsigned int);
@@ -28,7 +32,7 @@ class Number : public Operand{
 
         Number const    &operator=(Number const &);
         const char      *toString(void) const;
-        bool            isDouble(void) const;
+        bool            isReal(void) const;
 };
 
 #endif
