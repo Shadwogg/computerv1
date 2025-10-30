@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Operand.hpp                                        :+:      :+:    :+:   */
+/*   Variable.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 17:56:52 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 10:01:02 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/10/30 10:02:04 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/10/30 10:15:11 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERAND_HPP
-# define OPERAND_HPP
+#include "Variable.hpp"
 
-# include <iostream>
-# include <cstdlib>
+Variable::Variable(char x): _name(x){
+}
 
-# include <Symbol.hpp>
+Variable::~Variable(void){
+}
 
-class Operand : public Symbol{
+Variable const    &Variable::operator=(Variable const &rhs){
+    if (&rhs == this)
+        return (*this);
+    
+    return (*this);
+}
 
-    public :
-        Operand();
-        Operand(std::string);
-        Operand(Operand const &);
-        ~Operand();
 
-        Operand    operator=(Operand const &);
-        
-        bool    isOperand() const;
-        virtual const char    *toString(void) const;
-};
-
-#endif
+const char *Variable::toString(void) const{
+    return (&this->_name);
+}

@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 14:09:29 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 09:19:36 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 10:14:05 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ bool    Operand::isOperand() const{
 }
 
 const char    *Operand::toString(void) const{
-    return ("X");
+    return ("shouldnt be seen");
 }

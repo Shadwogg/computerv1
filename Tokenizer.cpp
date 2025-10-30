@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:04 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 09:22:10 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 10:19:16 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	print_symbols(std::list<Symbol *> l){
 	it = l.begin();
 	ite = l.end();
 
-	std::cout << "Printing symbols" << std::endl;
+	std::cout << "\033[1;31mPrinting symbols\033[0m" << std::endl;
 	while (it != ite){
 		std::cout << (*it)->toString() << " ";
 		it++;
@@ -83,12 +83,18 @@ std::list<Term> tokenify(std::string inp){
 	
 	while (inp[i]){
 		//case Number
-		if (isalnum(inp[i])){
-			std::cout << "	We got a number" << std::endl;
-			opd = extract_number(inp, i);
+		if (isalpha(inp[i])){
+			// std::cout << "	We got a litteral" << std::endl;
+			opd = new Variable(inp[i]);
+			symbols.push_back(opd);
 			i++;
+		} else if (isdigit(inp[i])){
+			std::cout << "Houston, wevgot a number" << std::endl;
+			opd = extract_number(inp, i);
+			symbols.push_back(opd);
+			i++; // HERE
 		} else if (is_operator(inp[i])){
-			std::cout << "	Reconnaisance d'operateur" << std::endl;
+			// std::cout << "	Reconnaisance d'operateur" << std::endl;
             op = new Operator(inp[i]);
 			symbols.push_back(op);
 			i++;

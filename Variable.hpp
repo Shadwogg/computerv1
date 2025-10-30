@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Operand.hpp                                        :+:      :+:    :+:   */
+/*   Variable.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 17:56:52 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 10:01:02 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/10/30 09:58:12 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/10/30 10:07:50 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERAND_HPP
-# define OPERAND_HPP
+#ifndef VARIABLE_HPP
+# define VARIABLE_HPP
 
-# include <iostream>
-# include <cstdlib>
+# include "Operand.hpp"
 
-# include <Symbol.hpp>
-
-class Operand : public Symbol{
-
-    public :
-        Operand();
-        Operand(std::string);
-        Operand(Operand const &);
-        ~Operand();
-
-        Operand    operator=(Operand const &);
+class Variable : public Operand{
+    
+    private:
+        const char _name;
+    
+    public:
+        Variable(char);
+        ~Variable(void);
         
-        bool    isOperand() const;
-        virtual const char    *toString(void) const;
+        Variable(Variable const &);
+        
+        Variable const    &operator=(Variable const &);
+    
+        const char *toString(void) const;
 };
 
 #endif
