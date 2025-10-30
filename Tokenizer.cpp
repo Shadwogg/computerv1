@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 23:55:04 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 10:19:16 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 10:26:24 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ std::string	ft_clean_input(std::string inp){
  * 
  * @param inp The string 
  * @param start Position at which we start
- * @return Operand* ; A Number, or a Litteral
+ * @return Operand* ; A Number 
  */
 Operand	*extract_number(std::string const &inp, size_t start){
 	// Int
