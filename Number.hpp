@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 10:26:37 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 10:29:22 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 12:03:19 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,18 @@
 
 class Number : public Operand{
     private :
-        unsigned int    integer;
-        double          real;
+        unsigned int    _integer;
+        double          _real;
 
     public :
-        Number(int);
+        Number(unsigned int);
         Number(double);
         ~Number(void);
         Number(Number const &);
 
-        Number const    &operator=(Number const);
-        const char    *toString(void) const;
+        Number const    &operator=(Number const &);
+        const char      *toString(void) const;
+        bool            isDouble(void) const;
 };
 
 #endif
