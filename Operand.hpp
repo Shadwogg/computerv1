@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:56:52 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/29 18:53:29 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 09:19:31 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class Operand : public Symbol{
 
         Operand    operator=(Operand const &);
         
-        bool    isOperand() const;   
+        bool    isOperand() const;
+        const char    *toString(void) const;
 };
 
 #endif

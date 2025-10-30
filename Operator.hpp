@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:17:49 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/29 19:17:38 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/30 09:19:22 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ class Operator : public Symbol{
 
         Operator    operator=(Operator const &);
         
-        bool        isOperand() const;   
+        bool    isOperand() const;
+        const char    *toString(void) const;
         
         // bool    is_sum(void);
         // bool    is_multiplication(void);
