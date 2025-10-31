@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 10:29:25 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/10/30 17:32:31 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/10/31 13:36:53 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,12 @@ Number const    &Number::operator=(Number const &rhs){
     return (*this);
 }
 
-//Cause leak, do not use !!!
 const char      *Number::toString(void) const
 {
     // std::stringstream out;
     // out << (this->isReal() ? _real : _integer);
     
-    return (this->isReal() ? std::to_string(_real) : std::to_string(_integer));
+    return (this->number);
 }
 
 bool    Number::isReal(void) const{
